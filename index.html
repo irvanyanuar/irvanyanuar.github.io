@@ -19,14 +19,23 @@
     <link rel="stylesheet" href="assets/css/Newsletter-Subscription-Form.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <style>
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: -moz-none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
 </head>
 
-<body class="flex-fill" style="background-image: url(&quot;assets/img/background2.jpg&quot;);">
+<body class="flex-fill" style="background-image: url(&quot;assets/img/background2.jpg&quot;);"
+    oncontextmenu="return false">
     <nav class="navbar navbar-dark navbar-expand-md fixed-top shadow" style="background-color: rgba(0,0,0,0.71);">
         <div class="container"><a class="navbar-brand" data-bs-hover-animate="tada" href="#">
-            I Y R
-        </a><button
-                data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle
+                I Y R
+            </a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span
+                    class="sr-only">Toggle
                     navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse text-primary" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
@@ -41,7 +50,7 @@
     <div class="jumbotron" id="home"
         style="padding: 30;padding-top: 120px;background-color: rgba(233,236,239,0);height: 100vh;">
         <h1 class="display-4 text-uppercase text-center text-white" data-bs-hover-animate="pulse"
-            style="font-size: 58px;filter: brightness(82%), text-shadow: 10;margin-top: 127px;">Muhammad I. Yanuar</h1>
+            style="font-size: 58px;filter: brightness(82%); text-shadow: 10;margin-top: 127px;">Muhammad I. Yanuar</h1>
         <hr data-aos="fade-down" data-aos-duration="1500"
             style="width: 130px;height: 0px;background-color: rgba(255,0,0,0.86);margin-bottom: 0px;">
         <p class="text-center text-white" data-aos="fade-down" data-aos-duration="2000"
@@ -57,12 +66,16 @@
                 </div>
                 <div class="col-md-6" data-aos="fade-left" data-aos-duration="2000" style="padding: 10px;">
                     <h1>About Me</h1>
-                    <p>Hello, my name is <strong>Muhammad Irvan Yanuar</strong>. You can call me Irvan or Yanuar,
-                        whatever you want. I am from Mojokerto. Currently, I am a student of Informatics Engineering at
-                        Electronic Engineering Polytechnic Institute
-                        of Surabaya (EEPIS).<br>I just wanted to say hello and thank you for visiting my website. I wish
-                        you
-                        very well always.&nbsp;<br><br>Contact me if you have a message for me in my contact
+                    <p>Hello, my name is <strong>Muhammad Irvan Yanuar</strong>. I am from Mojokerto, now I live in
+                        Surabaya. I am a programmer specialized in Back End Developer.<br>
+                        My Passion for IT technology since I attended the Vocational School majoring in Computer and
+                        Network Engineering. After that, I studied in Associate's Degree of Informatics Engineering in
+                        PENS Surabaya.
+                        The most valuable lesson I have learned from my education is I can understand IT technology in
+                        Network Engineering, Programming, and Software Development.<br>
+                        I like to learn new technology with passion and always be responsible and trustworthy.<br><br>
+                        Thank you for visiting my website. Have a great day!.&nbsp;<br><br>Contact me if you have a message
+                        for me in my contact
                         below!&nbsp;<i class="fa fa-hand-o-down"></i><br></p>
                 </div>
             </div>
@@ -108,9 +121,9 @@
                         class="fa fa-send"></i></button></div>
         </form>
     </div>
-    <div class="footer-basic" style="background-color: rgba(33,33,33,0.92);">        
+    <div class="footer-basic" style="background-color: rgba(33,33,33,0.92);">
         <footer>
-            
+
             <div class="social"><a class="text-white" data-bs-hover-animate="swing"
                     href="https://instagram.com/irvanyanuar_" target="_blank"><i
                         class="icon ion-social-instagram"></i></a><a class="text-white" data-bs-hover-animate="swing"
@@ -121,20 +134,49 @@
                     href="https://facebook.com/mirvanyanuar" target="_blank"><i
                         class="icon ion-social-facebook"></i></a>
             </div>
-            
+
             <ul class="list-inline text-white">
                 <li class="list-inline-item"><a href="#home">Home</a></li>
                 <li class="list-inline-item"><a href="#about">About</a></li>
                 <li class="list-inline-item"><a href="#gallery">Gallery</a></li>
                 <li class="list-inline-item"><a href="#contact">Contact Me</a></li>
             </ul>
-            
-            
-            <p class="text-white-50 copyright">© Copyright 2021 | Muhammad I. Yanuar</p>
+
+
+            <p class="text-white-50 copyright"> Copyright &copy; <script>document.write(new Date().getFullYear())</script> | Muhammad I. Yanuar</p>
             <p class="text-white text-center mb-0"><img src="assets/img/IYR-logo.png" width="100px"></p>
-            
+
         </footer>
     </div>
+    <script>
+        document.onkeydown = function (e) {
+            if (event.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        }
+        $(document).bind("contextmenu", function (e) {
+            e.preventDefault();
+        });
+        $(document).keydown(function (e) {
+            if (e.which === 123) {
+                return false;
+            }
+        });
+
+
+    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
