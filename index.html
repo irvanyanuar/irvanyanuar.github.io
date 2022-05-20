@@ -121,6 +121,7 @@
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
             <div class="form-group"><textarea class="form-control" name="message" placeholder="Message" rows="14"
                     required=""></textarea></div>
+            <input type="hidden" id="DateTime" name="created">
             <div class="form-group text-right"><button class="btn btn-primary btn-sm btn-send-message"
                     type="submit">send&nbsp;&nbsp;<i class="fa fa-send"></i></button></div>
         </form>
@@ -189,6 +190,9 @@
 
         $(document).on('click', '.btn-send-message', function (e) {
             e.preventDefault();
+
+            $("#DateTime").attr("value", dateTime());
+            
             const name = $('#contact-me-form').find('[name=name]').val();
             const email = $('#contact-me-form').find('[name=email]').val();
             const message = $('#contact-me-form').find('[name=message]').val();
@@ -223,10 +227,9 @@
 
         })
 
-        // $("#contact-me-form").submit(function(e) {
-        //     e.preventDefault();
-        //     swal('yes')
-        // })
+        function dateTime() {
+            return new Date($.now());
+        }
 
     </script>
 </body>
