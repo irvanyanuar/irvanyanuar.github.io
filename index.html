@@ -19,14 +19,6 @@
     <link rel="stylesheet" href="assets/css/Newsletter-Subscription-Form.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Grid.css">
-    <style>
-        body {
-            -webkit-user-select: none;
-            -moz-user-select: -moz-none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-    </style>
 </head>
 
 <body class="flex-fill" style="background-image: url(&quot;assets/img/background2.jpg&quot;);"
@@ -161,77 +153,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        document.onkeydown = function (e) {
-            if (event.keyCode == 123) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
-                return false;
-            }
-            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
-                return false;
-            }
-        }
-        $(document).bind("contextmenu", function (e) {
-            e.preventDefault();
-        });
-        $(document).keydown(function (e) {
-            if (e.which === 123) {
-                return false;
-            }
-        });
-
-        $(document).on('click', '.btn-send-message', function (e) {
-            e.preventDefault();
-
-            $("#DateTime").attr("value", dateTime());
-            
-            const name = $('#contact-me-form').find('[name=name]').val();
-            const email = $('#contact-me-form').find('[name=email]').val();
-            const message = $('#contact-me-form').find('[name=message]').val();
-
-            if (message == "") {
-                Swal.fire('Message cannot be empty!', '', 'warning')
-                return false
-            }
-            Swal.fire({
-                title: 'Sending message...',
-                html: 'Please wait...',
-                allowEscapeKey: false,
-                allowOutsideClick: false,
-                didOpen: () => {
-                    Swal.showLoading()
-                }
-            })
-            $.ajax({
-                url: "https://script.google.com/macros/s/AKfycbyp-4_RbxgI1ezKQt9e5Qk1v-e0-1BvjINDJt4yrUArOrxx2N5A7IO7eqZQRpesH8JaFQ/exec",
-                type: 'post',
-                data: $("#contact-me-form").serializeArray(),
-                success: function () {
-                    Swal.close()
-                    Swal.fire('Message sent successfully', '', 'success')
-                    $("#contact-me-form")[0].reset()
-                },
-                error: function () {
-                    Swal.close()
-                    Swal.fire("Failed to send message!", '', 'error')
-                }
-            });
-
-        })
-
-        function dateTime() {
-            return new Date($.now());
-        }
-
-    </script>
 </body>
 
 </html>
