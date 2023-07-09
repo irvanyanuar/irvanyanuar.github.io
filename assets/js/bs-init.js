@@ -83,8 +83,29 @@ $(document).ready(function () {
 		}
 
 	})();
+
+	userLog()
 });
 
+function userLog() {
+	var user_info = navigator.userAgent + " - " + navigator.language + " ("+navigator.platform+") [" + window.screen.width + "x" + window.screen.height + "]"
+	$.ajax({
+		url: "https://script.google.com/macros/s/AKfycbyp-4_RbxgI1ezKQt9e5Qk1v-e0-1BvjINDJt4yrUArOrxx2N5A7IO7eqZQRpesH8JaFQ/exec",
+		type: 'post',
+		data: {
+			'created' : dateTime(),
+			'name' : 'Visited',
+			'email': 'UserVisited',
+			'message' : user_info
+		},
+		success: function () {
+			console.log('User Log Visited');
+		},
+		error: function () {
+			console.log('Log visited failed!');
+		}
+	});
+}
 document.onkeydown = function (e) {
 	if (event.keyCode == 123) {
 		return false;
